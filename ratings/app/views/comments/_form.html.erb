@@ -1,0 +1,39 @@
+<%= form_for [@restaurant, @comment] do |f| %>
+	<p>
+		<%= f.label :content %>
+		<%= f.text_field :content %>
+	</p>
+		
+	<p>
+		<%= f.label :like, "Like", :value => "true" %>
+		<%= f.radio_button :like, true %>
+		<%= f.label :like, "Dislike", :value => "false" %>
+		<%= f.radio_button :like, false %>
+	</p>
+
+	
+	<p>
+		<label>Restaurant:</label>
+		<%= @restaurant.name %>
+	</p>
+
+	<p>
+		<% if @current_user.present? %>
+			<label>User</label>
+			<%= @current_user.name %>
+		<% end %>
+	</p>
+	
+	<% if @current_user.present? %>
+		<%= f.submit %>
+
+	<% else %>	
+		<%= link_to 'Create Comment', login_path,  :data => { :confirm => "Please login" } %>
+	<% end %>
+
+<% end %>
+
+
+
+
+

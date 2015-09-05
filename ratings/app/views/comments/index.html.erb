@@ -1,0 +1,10 @@
+<% @comments.each do |comment| %>
+	<p>
+		<%= comment.content %>
+		<% if comment.like %>
+			<%= link_to "Like", comment %>
+		<% else %>
+			<%= link_to "Dislike", comment %>
+		<% end %>
+	</p>
+<% end %>

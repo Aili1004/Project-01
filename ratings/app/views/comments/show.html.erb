@@ -1,0 +1,20 @@
+
+<p>
+	<% if @comment.restaurant %>
+		Restaurant: <%= link_to @comment.restaurant.name, @comment.restaurant %>
+	<% end %>
+</p>
+<p>
+	<% if @comment.user %>
+		User: <%= @comment.user.name %>
+	<% end %>
+</p>
+<p>
+	Comments: <%= @comment.content %>
+</p>
+<p>	
+	Like? :<%= @comment.like %>
+</p>
+
+<%= link_to 'Update', edit_comment_path(@comment) %>
+<%= link_to 'Delete', @comment, :method => 'delete', :data => { :confirm => "Are you sure?" } %>

@@ -1,0 +1,40 @@
+<%= form_for @restaurant do |f| %>
+	<p>
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+	</p>
+
+	<p>
+		<%= f.label :description %>
+		<%= f.text_field :description %>
+	</p>
+		
+
+	<p>
+		<%= f.label :address %>
+		<%= f.text_field :address %>
+	</p>
+	
+	<p>
+		<%= f.label :opening_hours %>
+		<%= f.text_field :opening_hours %>
+	</p>
+
+	<p>
+		<%= f.label :image %>
+		<%= f.url_field :image %>
+	</p>
+
+	<p>
+		<%= f.label :popular_food %>
+		<%= f.text_field :popular_food %>
+	</p>
+
+	<%= f.submit %>
+	
+<% end %>
+
+
+
+
+

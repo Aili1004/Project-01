@@ -1,0 +1,27 @@
+<h2>All Restaurants</h2>
+
+<% @restaurants.each do |restaurant| %>
+	<p>
+		<%= image_tag restaurant.image, :class => "index_image" %>
+		
+		<div class="description">
+			<strong><%= restaurant.name %></strong>
+			<p>
+				<%= restaurant.description %>
+				<%= link_to 'More...', restaurant %>
+				
+
+				<% restaurant.comments.each do |c| %>
+					<% restaurant.totalcount = restaurant.totalcount.to_i + 1 %>
+
+					<% if c.like %>
+						<% restaurant.count = restaurant.count.to_i + 1 %>
+					<% end %>
+				<% end %>
+				<p><strong>Likes:</strong> <%= restaurant.count %> / <%= restaurant.totalcount %></p>
+			</p>
+		</div>
+	</p>
+<% end %>
+
+
