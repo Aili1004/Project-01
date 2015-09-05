@@ -10,6 +10,7 @@
 <p><strong>Popular Food:</strong> <%= @restaurant.popular_food %></p>
 
 
+
 <div class="comment">
 
 	<p><strong>Comments:</strong>
@@ -23,4 +24,10 @@
 
 <%= link_to 'Update', edit_restaurant_path(@restaurant) %> 
 <%= link_to 'Delete', @restaurant, :method => 'delete', :data => { :confirm => "Are you sure?" } %>
+
+
+
+
+
+
 
