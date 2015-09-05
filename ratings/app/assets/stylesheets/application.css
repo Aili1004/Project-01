@@ -11,5 +11,120 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require social-share-button
  *= require_self
  */
+
+ body {
+	max-width: 960px;
+	text-align: center;
+	background-image: url("http://happydaysibiza.com/wp-content/uploads/2013/06/slider-background-luxury-restaurant-ibiza-happy-days-ibiza.jpg")
+}
+
+h2 {
+	font-family: 'Timmana', sans-serif;
+	/*color: #000099;*/
+	font-size: 30px;
+	text-shadow: 0 0 3px #FF0000;
+}
+
+.index_image {
+	width: 300px;
+	height: 200px;
+	border-radius: 5%;
+}
+
+.show_image {
+	width: 30%;
+	height: 150px;
+	border-radius: 80%;
+}
+
+.show_restaurant {
+	max-width: 460px;
+	margin: 0 auto;
+	text-align: left;
+}
+.all_restaurant_images {
+	display: inline-block;
+}
+
+.description {
+	text-align: left;
+	position: absolute;
+	display: inline-block;
+	max-width: 220px;
+	height: 200px;
+	margin: 0 auto;
+	margin-left: 10px;
+	background-color: #F0F0F0;
+	border-radius: 5%;
+}
+
+.restaurant_name {
+	text-align: center;
+	padding-top: 10px;
+	font-family: 'Candal', sans-serif;
+}
+
+.all_description {
+	font-family: 'Courgette', cursive;
+}
+
+nav {
+	text-align: center;
+}
+
+.comment {
+	text-align: center;
+	background-color: #FFFFCC;
+	width: 50%;
+	padding: 2em;
+	margin: 0 auto;
+	border-radius: 0.5em;
+	box-shadow: 2px 2px 10px black;
+}
+
+.social {
+	text-align: center;
+	background-color: white;
+	width: 100%;
+	padding: 2em;
+	margin-top: 20px;
+	margin-left: 50px;
+	border-radius: 0.5em;
+	box-shadow: 2px 2px 10px black;
+}
+
+
+textarea {
+	width: 125px;
+}
+
+label {
+	min-width: 150px;
+	display: inline-block;
+	text-align: right;
+}
+/*.slides > li {
+	-webkit-backface-visibility: hidden;
+}*/
+
+
+ /*.social-share-button-facebook {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background: url("/social/facebook.png") no-repeat;
+}*/
+
+
+
+
+
+
+
+
+
+
+

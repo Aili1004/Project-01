@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   	end
   	resources :users, :except => [:edit]
 
+  	resources :restaurants, only: [:index, :show]
+
 	get '/login' => 'session#new' 
 	post '/login' => 'session#create' #log me in
 	delete '/login' => 'session#destroy' #logout
