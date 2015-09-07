@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ratings</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link href='https://fonts.googleapis.com/css?family=Candal' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Timmana' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+	
+	<div class="container">
+		<%= link_to 'User', user_homepage_path %>
+		<%= link_to 'Restaurant', restaurant_homepage_path %>
+	</div>
+
+</body>
+</html>

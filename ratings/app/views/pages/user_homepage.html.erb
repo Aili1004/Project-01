@@ -8,15 +8,14 @@
   <link href='https://fonts.googleapis.com/css?family=Candal' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Timmana' rel='stylesheet' type='text/css'>
+
 </head>
 
 <body>
-	<div class="container">	
+	
+	<div class="container">
 		<% if @current_user.present? %>
 			<p>User: <%= @current_user.name %></p>
-		<% end %>
-		<% if @current_restaurant_user.present? %>
-			<p>Restaurant Owner: <%= @current_restaurant_user.name %></p>
 		<% end %>
 
 		<nav id="primary_nav_wrap">
@@ -33,25 +32,14 @@
 						<% end %>
 		    		</ul>
 		    	</li>
-
-		    	<li><a href="#">Restaurants</a>
-		    		<ul>
-						<% if @current_restaurant_user.present? %>
-							<li><%= link_to 'Edit your profile', edit_restaurant_user_path %></li>
-							<li><%= link_to "Logout #{ @current_restaurant_user.name }", restaurant_login_path, :method => 'delete', :data => { :confirm => "Are you sure you wish to logout?"} %></li>
-						<% else %>
-							<li><%= link_to 'Restaurant User Login', restaurant_login_path %></li>
-							<li><%= link_to 'New Restaurant User', new_restaurant_user_path %></li>
-						<% end %>
-		    		</ul>
-		 		</li>
 				
-		  		<li><%= link_to 'About Us', aboutus_path %></li>
+		  		<li><%= link_to 'About Us', '/home' %></li>
 			</ul>
 		</nav>
-
 		<%= yield %>
 	</div>
 
 </body>
 </html>
+
+

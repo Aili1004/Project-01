@@ -20,16 +20,38 @@
 		<%= f.text_field :opening_hours %>
 	</p>
 
+
+	
 	<p>
-		<%= f.label :image %>
-		<%= f.url_field :image %>
+		<%= res.label :image %>
+		<%= res.url_field :image %>
 	</p>
+
+
+	<!-- <p>
+		<% f.fields_for :restaurants do |res| %>
+			<p>
+				<%= res.label :image %>
+				<%= res.url_field :image %>
+			</p>
+		<% end -%>
+	</p> -->
+
+
 
 	<p>
 		<%= f.label :popular_food %>
 		<%= f.text_field :popular_food %>
 	</p>
 	
+	<p>
+		<label>Restaurant Owner</label>
+		<%= f.select :restaurant_user_id, RestaurantUser.all.map { |user| [user.name, user.id] }, :include_blank => true %>
+	</p>
+
+	<%= f.submit 'Add Image', :name => "add_image" %>
+	<%= f.submit 'Delete checked images', :name => "remove_image" %>
+
 	<div class="form_button">
 		<%= f.submit %>
 	</div>

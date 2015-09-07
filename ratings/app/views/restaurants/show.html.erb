@@ -3,10 +3,15 @@
 	<%= @restaurant.name %>
 </div>
 
-<p>
-	<%= image_tag @restaurant.image, :class => "show_image" %>
-	<img class="show_image" src="http://i.ytimg.com/vi/qIjXYiyx6SY/maxresdefault.jpg">
-</p>
+<div class="crossfade">
+	<p>
+		<img src="http://www.bobbyflaysteak.com/files/d28afc58c82bc17f2e18cef8212265c6_full_size.jpg">
+		<img src="http://s3.amazonaws.com/stnd-narcissa-prod/graphics/assets/000/000/026/medium/narcissa_night_january_2014_cwmosier-5.jpg?1390860090">
+		<img src="http://www.meyer-frankfurt.de/wp-content/uploads/2012/08/restaurant_meyers-slider-1-haute-cuisine-mit-herz-meyer-catering-service.jpg">
+		<img src="http://media-cdn.tripadvisor.com/media/photo-s/03/2e/6b/e0/park-terrace-restaurant.jpg">
+
+	</p>
+</div>
 
 
 <div class="show_restaurant">
@@ -14,7 +19,11 @@
 	<p><strong>Address:</strong> <%= @restaurant.address %></p>
 	<p><strong>Opening Hours:</strong> <%= @restaurant.opening_hours %></p>
 	<p><strong>Popular Food:</strong> <%= @restaurant.popular_food %></p>
+	<% if @restaurant.restaurant_user %>
+		<p><strong>Restaurant Owner:</strong> <%= @restaurant.restaurant_user.name %></p>
+	<% end %>
 </div>
+
 
 <div class="comment">
 	<p><strong>Comments:</strong>
@@ -32,9 +41,15 @@
 <% end %>
 
 
-<%= link_to 'Update', edit_restaurant_path(@restaurant) %> 
-<%= link_to 'Delete', @restaurant, :method => 'delete', :data => { :confirm => "Are you sure?" } %>
+<% if @current_restaurant_user.present? %>
+	<% if @current_restaurant_user.name == @restaurant.restaurant_user.name %>
+		<%= link_to 'Update', edit_restaurant_path(@restaurant) %> 
+		<%= link_to 'Delete', @restaurant, :method => 'delete', :data => { :confirm => "Are you sure?" } %>
+	
+	
+	<% end %>
 
+<% end %>
 
 <div class="social">
 	<%= social_share_button_tag("My Site") %>

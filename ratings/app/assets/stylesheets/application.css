@@ -35,14 +35,13 @@ h2 {
 }
 
 .show_image {
-	width: 30%;
-	height: 150px;
-	border-radius: 80%;
+	
 }
 
 .show_restaurant {
 	max-width: 460px;
 	margin: 0 auto;
+	margin-top: 50px;
 	text-align: left;
 }
 .all_restaurant_images {
@@ -53,9 +52,11 @@ h2 {
 	text-align: left;
 	position: absolute;
 	display: inline-block;
-	max-width: 220px;
+	/*max-width: 220px;*/
+	width: 220px;
 	height: 200px;
 	margin: 0 auto;
+
 	margin-left: 10px;
 	background-color: #D8D8D8;
 	border-radius: 5%;
@@ -87,17 +88,11 @@ nav {
 
 .social {
 	text-align: center;
-	/*background-color: white;*/
 	width: 100%;
 	padding: 2em;
 	margin-top: 20px;
 	margin-left: 50px;
 	border-radius: 0.5em;
-	/*box-shadow: 2px 2px 10px black;*/
-}
-
-.form_button {
-	/*width: 200%;*/
 }
 
 
@@ -111,19 +106,186 @@ label {
 	text-align: right;
 }
 
-
-input {
-	/*width: 300px;*/
-}
-
-/*.slides > li {
-	-webkit-backface-visibility: hidden;
-}*/
-
-
 .social-share-button a {
 	zoom: 2;
 }
+
+
+
+
+
+/* Cross Fading Images */
+
+.crossfade {
+  position:relative;
+  height:281px;
+  width:450px;
+  margin:0 auto;
+}
+
+.crossfade img {
+	width: 520px;
+	height: 300px;
+	border-radius: 5%;
+	position:absolute;
+	left:0;
+	-webkit-transition: opacity 1s ease-in-out;
+	-moz-transition: opacity 1s ease-in-out;
+	-o-transition: opacity 1s ease-in-out;
+	transition: opacity 1s ease-in-out;
+}
+
+
+@keyframes crossfadeInAndOut {
+	0% {
+		opacity:1;
+	}
+	17% {
+		opacity:1;
+	}
+	25% {
+		opacity:0;
+	}
+	92% {
+		opacity:0;
+	}
+	100% {
+		opacity:1;
+	}
+}
+
+.crossfade img:nth-of-type(1) {
+	animation-name: crossfadeInAndOut;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+	animation-duration: 8s;
+	animation-direction: alternate;
+	animation-delay: 6s;
+}
+
+.crossfade img:nth-of-type(2) {
+	animation-name: crossfadeInAndOut;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+	animation-duration: 8s;
+	animation-direction: alternate;
+	animation-delay: 4s;
+}
+
+.crossfade img:nth-of-type(3) {
+	animation-name: crossfadeInAndOut;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+	animation-duration: 8s;
+	animation-direction: alternate;
+	animation-delay: 2s;
+}
+
+.crossfade img:nth-of-type(4) {
+	animation-name: crossfadeInAndOut;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+	animation-duration: 8s;
+	animation-direction: alternate;
+	animation-delay: 0s;
+}
+
+
+
+
+
+
+/* Menu Bar Drop Down */
+
+#primary_nav_wrap
+{
+  margin-top:15px;
+  margin-left: 80%;
+}
+
+#primary_nav_wrap ul
+{
+  list-style:none;
+  position:absolute;
+  float:left;
+  margin: 0;
+  padding:0;
+}
+
+#primary_nav_wrap ul a
+{
+  display:block;
+  color:#333;
+  text-decoration:none;
+  font-weight:700;
+  font-size:12px;
+  line-height:32px;
+  padding:0 15px;
+  font-family:"HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+#primary_nav_wrap ul li
+{
+  position:relative;
+  float:left;
+  margin:0;
+  padding:0
+}
+
+#primary_nav_wrap ul li.current-menu-item
+{
+  background:#ddd
+}
+
+#primary_nav_wrap ul li:hover
+{
+  background:#f6f6f6
+}
+
+#primary_nav_wrap ul ul
+{
+  display:none;
+  position:absolute;
+  top:100%;
+  left:0;
+  background:#fff;
+  padding:0
+}
+
+#primary_nav_wrap ul ul li
+{
+  float:none;
+  width:200px
+}
+
+#primary_nav_wrap ul ul a
+{
+  line-height:120%;
+  padding:10px 15px
+}
+
+#primary_nav_wrap ul ul ul
+{
+  top:0;
+  left:100%
+}
+
+#primary_nav_wrap ul li:hover > ul
+{
+  display:block
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,5 +1,5 @@
 
-<h2>All Restaurantss</h2>
+<h2>All Restaurants</h2>
 
 <% @restaurants.each do |restaurant| %>
 	<p>
@@ -25,6 +25,14 @@
 			</p>
 		</div>
 	</p>
+<% end %>
+
+
+
+<% if @current_restaurant_user.present? %>
+	<p><%= link_to 'Add New Restaurant', new_restaurant_path %></p>
+<% else %>	
+	<p><%= link_to 'Add New Restaurant', restaurant_login_path,  :data => { :confirm => "Please login" } %></p>
 <% end %>
 
 

@@ -1,0 +1,37 @@
+<% if @restaurant_user.errors.any? %>
+	<ol>
+		<% @restaurant_user.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+		<% end %>
+	</ol>
+<% end %>
+
+<%= form_for @restaurant_user do |f| %>
+	<p>
+		<%= f.label :email %>
+		<%= f.email_field :email %>
+	</p>
+
+	<p>
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+	</p>
+
+	<p>
+		<%= f.label :license_number %>
+		<%= f.text_field :license_number %>	
+	</p>
+
+	<p>
+		<%= f.label :password %>
+		<%= f.password_field :password %>
+	</p>
+
+	<p>
+		<%= f.label :password_confirmation %>
+		<%= f.password_field :password_confirmation %>
+	</p>
+
+	<%= f.submit %>
+
+<% end %>

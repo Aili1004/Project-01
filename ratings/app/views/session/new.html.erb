@@ -1,6 +1,6 @@
 
 
-<h2>Login</h2>
+<h2>User Login</h2>
 
 <%= form_tag '/login' do %>
 	<p>
@@ -16,5 +16,7 @@
 	<p>
 		<%= submit_tag 'Login to Rate' %>
 	</p>
-
 <% end %>
+
+
+<%= link_to "Don't have an account? Here here to sign up!", new_user_path %>

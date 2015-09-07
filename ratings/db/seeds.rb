@@ -14,6 +14,23 @@ User.destroy_all
 u1 = User.create :name => "Craigsy", :email => "craigsy@gmail.com", :password => 'chicken'
 u2 = User.create :name => "Jonesy", :email => "jonesy@gmail.com", :password => 'chicken'
 
+RestaurantUser.destroy_all
+ru1 = RestaurantUser.create :name => "Aili Zhang", :email => "aili.zhang91@gmail.com", :license_number => "12345ABC", :password => "chicken"
+ru2 = RestaurantUser.create :name => "Eileen Li", :email => "eileen.li@gmail.com", :license_number => "00000XYZ", :password => "chicken"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

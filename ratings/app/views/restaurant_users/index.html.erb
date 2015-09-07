@@ -1,0 +1,8 @@
+<h2>All Restaurant Users</h2>
+
+<% @restaurant_users.each do |restaurant_user| %>
+	<p><strong><%= restaurant_user.name %>:</strong> <%= restaurant_user.email %></p>
+	<p>License Number: <%= restaurant_user.license_number %></p>
+<% end %>
+
+
