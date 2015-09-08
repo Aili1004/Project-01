@@ -28,7 +28,6 @@
 		</p>
 	<% end %>
 
-
 	<div class="imgField">
 		<p>
 			<%= label_tag :image %>
@@ -49,12 +48,6 @@
 		<label>Restaurant Owner</label>
 		<%= f.select :restaurant_user_id, RestaurantUser.all.map { |user| [user.name, user.id] }, :include_blank => true %>
 	</p>
-
-
-
-
-
-	<%= f.submit 'Delete checked images', :name => "remove_image" %>
 
 	<div class="form_button">
 		<%= f.submit %>

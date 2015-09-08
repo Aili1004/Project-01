@@ -6,4 +6,9 @@ $(document).ready(function () {
 		$newImageField.val('').appendTo('.imgField');
 		$('.imgField').append($newImageField);
 	});
+
+
+
+	// $('.crossfade').slick();
+
 })

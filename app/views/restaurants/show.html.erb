@@ -4,16 +4,9 @@
 </div>
 
 <div class="crossfade">
-	<p>
-		<% @restaurant.images.each do |image| %>
-			<%= image_tag image.image, :class => 'show_image' %>
-		<% end %>
-		<!-- <img src="http://www.bobbyflaysteak.com/files/d28afc58c82bc17f2e18cef8212265c6_full_size.jpg">
-		<img src="http://s3.amazonaws.com/stnd-narcissa-prod/graphics/assets/000/000/026/medium/narcissa_night_january_2014_cwmosier-5.jpg?1390860090">
-		<img src="http://www.meyer-frankfurt.de/wp-content/uploads/2012/08/restaurant_meyers-slider-1-haute-cuisine-mit-herz-meyer-catering-service.jpg">
-		<img src="http://media-cdn.tripadvisor.com/media/photo-s/03/2e/6b/e0/park-terrace-restaurant.jpg"> -->
-
-	</p>
+	<% @restaurant.images.each do |image| %>
+		<%= image_tag image.image, :class => 'show_image' %>
+	<% end %>
 </div>
 
 
@@ -43,10 +36,12 @@
 	<p><%= link_to 'Add New Comment', login_path,  :data => { :confirm => "Please login" } %></p>
 <% end %>
 
-
+<% if @current_restaurant_user.present? %>
+	<% if @current_restaurant_user.name == @restaurant.restaurant_user.name %>
 		<%= link_to 'Update', edit_restaurant_path(@restaurant) %> 
 		<%= link_to 'Delete', @restaurant, :method => 'delete', :data => { :confirm => "Are you sure?" } %>
-	
+	<% end %>
+<% end %>
 	
 
 <div class="social">

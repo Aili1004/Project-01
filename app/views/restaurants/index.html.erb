@@ -4,7 +4,9 @@
 <% @restaurants.each do |restaurant| %>
 	<p>
 		<div class="all_restaurant_images">
-			<%= image_tag restaurant.images[0].image, :class => 'index_image' %>
+			<% if restaurant.images  %>
+				<%= image_tag restaurant.images[0].image, :class => 'index_image' %>
+			<% end %>
 		</div>
 		
 
