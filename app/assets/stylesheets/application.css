@@ -18,7 +18,8 @@
  body {
 	max-width: 960px;
 	text-align: center;
-	background-image: url("http://happydaysibiza.com/wp-content/uploads/2013/06/slider-background-luxury-restaurant-ibiza-happy-days-ibiza.jpg")
+	background-image: url("http://happydaysibiza.com/wp-content/uploads/2013/06/slider-background-luxury-restaurant-ibiza-happy-days-ibiza.jpg");
+	/*color: white;*/
 }
 
 h2 {
@@ -195,100 +196,67 @@ label {
 
 
 
-/* Menu Bar Drop Down */
-
-#primary_nav_wrap
-{
-  margin-top:15px;
-  margin-left: 80%;
+.nav ul {
+    *zoom:1;
+    list-style:none;
+    margin:0;
+    padding:0;
+    background:#333;
 }
-
-#primary_nav_wrap ul
-{
-  list-style:none;
-  position:absolute;
-  float:left;
-  margin: 0;
-  padding:0;
+.nav ul:before,.nav ul:after {
+    content:"";
+    display:table;
 }
-
-#primary_nav_wrap ul a
-{
-  display:block;
-  color:#333;
-  text-decoration:none;
-  font-weight:700;
-  font-size:12px;
-  line-height:32px;
-  padding:0 15px;
-  font-family:"HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
+.nav ul:after {
+    clear:both;
 }
-
-#primary_nav_wrap ul li
-{
-  position:relative;
-  float:left;
-  margin:0;
-  padding:0
+.nav ul > li {
+    float:left;
+    position:relative;
 }
-
-#primary_nav_wrap ul li.current-menu-item
-{
-  background:#ddd
+.nav a {
+    display:block;
+    padding:10px 20px;
+    line-height:1.2em;
+    color:#fff;
+    border-left:1px solid #595959;
 }
-
-#primary_nav_wrap ul li:hover
-{
-  background:#f6f6f6
+.nav a:hover {
+    text-decoration:none;
+    background:#595959;
 }
-
-#primary_nav_wrap ul ul
-{
-  display:none;
-  position:absolute;
-  top:100%;
-  left:0;
-  background:#fff;
-  padding:0
+.nav li ul {
+    background:#273754;
 }
-
-#primary_nav_wrap ul ul li
-{
-  float:none;
-  width:200px
+.nav li ul li {
+    width:200px;
 }
-
-#primary_nav_wrap ul ul a
-{
-  line-height:120%;
-  padding:10px 15px
+.nav li ul a {
+    border:none;
 }
-
-#primary_nav_wrap ul ul ul
-{
-  top:0;
-  left:100%
-}
-
-#primary_nav_wrap ul li:hover > ul
-{
-  display:block
+.nav li ul a:hover {
+    background:rgba(0,0,0,0.2);
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+.nav li ul {
+    position:absolute;
+    left:0;
+    top:36px;
+    z-index:1;
+    max-height:0;
+    overflow:hidden;
+    -webkit-transform:perspective(400) rotate3d(1,0,0,-90deg);
+    -webkit-transform-origin:50% 0;
+    -webkit-transition:350ms;
+    -moz-transition:350ms;
+    -o-transition:350ms;
+    transition:350ms;
+}
+.nav ul > li:hover ul {
+    max-height:1000px;
+    -webkit-transform:perspective(400) rotate3d(0,0,0,0);
+}
 
 
 
