@@ -17,6 +17,9 @@
 					<%= truncate(restaurant.description, :length => 120) %>
 					<%= link_to 'More...', restaurant %>
 				</div>
+
+				<% restaurant.count = 0  %>
+				<% restaurant.totalcount = 0 %>
 				<% restaurant.comments.each do |c| %>
 					<% restaurant.totalcount = restaurant.totalcount.to_i + 1 %>
 
