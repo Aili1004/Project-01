@@ -19,8 +19,9 @@ ru1 = RestaurantUser.create :name => "Aili Zhang", :email => "aili.zhang91@gmail
 ru2 = RestaurantUser.create :name => "Eileen Li", :email => "eileen.li@gmail.com", :license_number => "00000XYZ", :password => "chicken"
 
 
-
-
+Image.destroy_all
+i1 = Image.create :image => "http://wildlifewaystation.org/img/galleries/animals-gen-01/animal-09.jpg"
+i2 = Image.create :image => "http://wallzhut.com/wp-content/uploads/2015/04/Animal-Pictures-12.jpg"
 
 
 

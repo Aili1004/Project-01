@@ -35,7 +35,9 @@ h2 {
 }
 
 .show_image {
-	
+	width: 550px;
+	height: 300px;
+	border-radius: 5%;
 }
 
 .show_restaurant {
@@ -115,7 +117,7 @@ label {
 
 
 /* Cross Fading Images */
-
+/*
 .crossfade {
   position:relative;
   height:281px;
@@ -190,7 +192,7 @@ label {
 	animation-delay: 0s;
 }
 
-
+*/
 
 
 

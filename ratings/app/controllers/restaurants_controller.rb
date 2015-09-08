@@ -13,6 +13,13 @@ class RestaurantsController < ApplicationController
 
 	def create
 		restaurant = Restaurant.create restaurant_params
+
+		restaurant.images = []
+
+		params[:restaurant][:image].each do |img|
+			restaurant.images.create :image => img
+		end
+		
 		redirect_to restaurants_path
 
 	end
@@ -24,6 +31,13 @@ class RestaurantsController < ApplicationController
 	def update
 		restaurant = Restaurant.find params[:id]
 		restaurant.update restaurant_params
+		
+		restaurant.images = []
+
+		params[:restaurant][:image].each do |img|
+			restaurant.images.create :image => img
+		end
+
 		redirect_to restaurant
 
 	end	
@@ -36,6 +50,6 @@ class RestaurantsController < ApplicationController
 
 	private
 	def restaurant_params
-		params.require(:restaurant).permit(:name, :description, :address, :opening_hours, :image, :popular_food, :count, :totalcount, :restaurant_user_id)
+		params.require(:restaurant).permit(:name, :description, :address, :opening_hours, :popular_food, :count, :totalcount, :restaurant_user_id)
 	end
 end

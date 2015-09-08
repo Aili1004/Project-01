@@ -7,7 +7,6 @@
 #  description        :text
 #  address            :text
 #  opening_hours      :text
-#  image              :text
 #  popular_food       :text
 #  created_at         :datetime
 #  updated_at         :datetime
@@ -19,4 +18,5 @@
 class Restaurant < ActiveRecord::Base
 	has_many :comments
 	belongs_to :restaurant_user
+	has_many :images
 end

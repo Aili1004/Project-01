@@ -4,8 +4,9 @@
 <% @restaurants.each do |restaurant| %>
 	<p>
 		<div class="all_restaurant_images">
-			<%= image_tag restaurant.image, :class => "index_image" %>
+			<%= image_tag restaurant.images[0].image, :class => 'index_image' %>
 		</div>
+		
 
 		<div class="description">
 			<div class="restaurant_name"><strong><%= restaurant.name %></strong></div>

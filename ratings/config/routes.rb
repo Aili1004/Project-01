@@ -21,6 +21,7 @@ Rails.application.routes.draw do
 	resources :users, :except => [:edit]
 	resources :restaurant_users, :except => [:edit]
 	resources :restaurants, only: [:index, :show]
+	resources :images
 
 	get '/login' => 'session#new' 
 	post '/login' => 'session#create' #log me in

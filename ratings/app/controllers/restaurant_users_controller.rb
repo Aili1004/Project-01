@@ -19,19 +19,6 @@ class RestaurantUsersController < ApplicationController
 			render :new
 		end
 
-
-		# if params[:add_image]
-		# 	@restaurant_user.restaurants.image.create
-		# end
-
-		# if @restaurant_user.save
-		# 	flash[:notice] = "Successfully created image."
-		# 	redirect_to @restaurant_user
-
-		# else
-		# 	render :new
-		# end
-
 	end
 
 	def edit

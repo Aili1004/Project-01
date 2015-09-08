@@ -21,23 +21,24 @@
 	</p>
 
 
-	
-	<p>
-		<%= res.label :image %>
-		<%= res.url_field :image %>
-	</p>
+	<% @restaurant.images.each do |img| %>
+		<p>
+			<%= label_tag :image %>
+			<%= url_field_tag :image, img.image, :name => "restaurant[image][]" %>
+		</p>
+	<% end %>
 
 
-	<!-- <p>
-		<% f.fields_for :restaurants do |res| %>
-			<p>
-				<%= res.label :image %>
-				<%= res.url_field :image %>
-			</p>
-		<% end -%>
-	</p> -->
+	<div class="imgField">
+		<p>
+			<%= label_tag :image %>
+			<%= url_field_tag :image, nil, :name => "restaurant[image][]" %>
+		</p>
+	</div>
 
-
+	<div class="addImageButton">
+		<%= f.submit 'Add Image', :name => "add_image" %>
+	</div>
 
 	<p>
 		<%= f.label :popular_food %>
@@ -49,7 +50,10 @@
 		<%= f.select :restaurant_user_id, RestaurantUser.all.map { |user| [user.name, user.id] }, :include_blank => true %>
 	</p>
 
-	<%= f.submit 'Add Image', :name => "add_image" %>
+
+
+
+
 	<%= f.submit 'Delete checked images', :name => "remove_image" %>
 
 	<div class="form_button">
