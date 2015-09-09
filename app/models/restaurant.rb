@@ -19,4 +19,7 @@ class Restaurant < ActiveRecord::Base
 	has_many :comments
 	belongs_to :restaurant_user
 	has_many :images
+
+	# geocoded_by :address
+	# after_validation :geocode
 end

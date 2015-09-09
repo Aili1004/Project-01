@@ -1,6 +1,12 @@
 class RestaurantsController < ApplicationController
+
 	def index
 		@restaurants = Restaurant.all
+
+		# @hash = Gmaps4rails.build_markers(@restaurants) do |restaurant, marker|
+		# 	marker.lat restaurant.latitude
+		# 	marker.lng restaurant.longitude
+		# end
 	end
 
 	def show
@@ -37,12 +43,8 @@ class RestaurantsController < ApplicationController
 
 		params[:restaurant][:image].each do |img|
 			restaurant.images.create :image => img
-
 		end
-
-
 		redirect_to restaurant
-
 	end	
 
 	def destroy

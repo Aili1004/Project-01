@@ -1,7 +1,6 @@
 class RestaurantUsersController < ApplicationController
 
-	# before_action :check_if_logged_in, :only => [:index, :edit, :update]
-	# before_action :check_if_admin, :only => [:index]
+	before_action :check_if_logged_in, :only => [:index, :edit, :update]
 
 	def index
 		@restaurant_users = RestaurantUser.all
@@ -39,11 +38,7 @@ class RestaurantUsersController < ApplicationController
 		params.require(:restaurant_user).permit(:email, :name, :license_number, :password, :password_confirmation)
 	end
 
-	# def check_if_logged_in
-	# 	redirect_to root_path unless @restaurant_user.present?
-	# end
-
-	# def check_if_admin
-	# 	redirect_to root_path unless @current_user.present? && @current_user.admin?
-	# end
+	def check_if_logged_in
+		redirect_to root_path unless @restaurant_user.present?
+	end
 end
