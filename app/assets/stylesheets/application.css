@@ -12,14 +12,16 @@
  *
  *= require_tree .
  *= require social-share-button
+ *= require slick
+ *= require slick-theme 
  *= require_self
  */
+
 
  body {
 	max-width: 960px;
 	text-align: center;
 	background-image: url("http://happydaysibiza.com/wp-content/uploads/2013/06/slider-background-luxury-restaurant-ibiza-happy-days-ibiza.jpg");
-	/*color: white;*/
 }
 
 h2 {
@@ -55,8 +57,7 @@ h2 {
 	text-align: left;
 	position: absolute;
 	display: inline-block;
-	/*max-width: 220px;*/
-	width: 220px;
+	width: 250px;
 	height: 200px;
 	margin: 0 auto;
 
@@ -99,103 +100,177 @@ nav {
 }
 
 
-textarea {
-	width: 300px;
-}
-
-label {
-	min-width: 150px;
-	display: inline-block;
-	text-align: right;
-}
-
 .social-share-button a {
 	zoom: 2;
 }
 
-
-
-/* Cross Fading Images */
-
-.crossfade {
-  position:relative;
-  height:281px;
-  width:450px;
-  margin:0 auto;
-}
-
-.crossfade img {
-	width: 520px;
+.slick {
+	width: 550px;
 	height: 300px;
 	border-radius: 5%;
-	position:absolute;
-	left:0;
-	-webkit-transition: opacity 1s ease-in-out;
-	-moz-transition: opacity 1s ease-in-out;
-	-o-transition: opacity 1s ease-in-out;
-	transition: opacity 1s ease-in-out;
+	margin: 0 auto;
 }
 
 
-@keyframes crossfadeInAndOut {
-	0% {
-		opacity:1;
-	}
-	17% {
-		opacity:1;
-	}
-	25% {
-		opacity:0;
-	}
-	92% {
-		opacity:0;
-	}
-	100% {
-		opacity:1;
-	}
+.slick img {
+	animation-delay: 5s;
 }
 
-.crossfade img:nth-of-type(1) {
-	animation-name: crossfadeInAndOut;
-	animation-timing-function: ease-in-out;
-	animation-iteration-count: infinite;
-	animation-duration: 8s;
-	animation-direction: alternate;
-	animation-delay: 6s;
-}
 
-.crossfade img:nth-of-type(2) {
-	animation-name: crossfadeInAndOut;
-	animation-timing-function: ease-in-out;
-	animation-iteration-count: infinite;
-	animation-duration: 8s;
-	animation-direction: alternate;
-	animation-delay: 4s;
-}
-
-.crossfade img:nth-of-type(3) {
-	animation-name: crossfadeInAndOut;
-	animation-timing-function: ease-in-out;
-	animation-iteration-count: infinite;
-	animation-duration: 8s;
-	animation-direction: alternate;
-	animation-delay: 2s;
-}
-
-.crossfade img:nth-of-type(4) {
-	animation-name: crossfadeInAndOut;
-	animation-timing-function: ease-in-out;
-	animation-iteration-count: infinite;
-	animation-duration: 8s;
-	animation-direction: alternate;
-	animation-delay: 0s;
+.aboutus {
+	margin-left: 15%;
 }
 
 
 
+/* Form Styles */
+.basic-grey {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 500px;
+	background: #F7F7F7;
+	padding: 25px 15px 25px 10px;
+	font: 12px Georgia, "Times New Roman", Times, serif;
+	color; #888;
+	text-shadow: 1px 1px 1px #FFF;
+	border: 1px solid #E4E4E4;
+}
+
+.basic-grey h1 {
+	font-size: 25px;
+	padding: 0px 0px 10px 40px;
+	display: block;
+	border-bottom: 1px solid #E4E4E4;
+	margin: 0 auto;
+	color: #888;
+}
+
+.basic-grey label {
+	float: left;
+	width: 20%;
+	text-align: right;
+	padding-right: 10px;
+	margin-top: 10px;
+	color: #888;
+}
+
+.basic-grey input[type="text"], .basic-grey input[type="url"], .basic-grey input[type="password"], .basic-grey input[type="email"], .basic-grey input[type="radio"], {
+	border: 1px solid #DADADA;
+	color: #888;
+	height: 30px;
+	margin-bottom: 16px;
+	margin-right: 6px;
+	margin-top: 2px;
+	outline: 0 none;
+	padding: 3px 3px 3px 5px;
+	width: 70%;
+	font-size: 12px;
+	line-height: 15px;
+	box-shadow: inset 0px 1px 4px #ECECEC;
+	-moz-box-shadow: inset 0px 1px 4px #ECECEC;
+	-webkit-box-shadow: inset 0px 1px 4px #ECECEC;
+}
+
+.basic-grey textarea {
+	padding: 5px 3px 3px 5px;
+	height: 100px;
+	width: 70%;
+}
+
+.basic-grey select {
+	background: #FFF;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	text-indent: 0.01px;
+	text-overflow: '';
+	width: 70%;
+	height: 35px;
+	line-height: 25px;
+}
+
+.button input {
+	background: #E27575;
+	border: none;
+	padding: 10px 25px 10px 25px;
+	margin-top: 5px;
+	color: #FFF;
+	box-shadow: 1px 1px 5px #B6B6B6;
+	border-radius: 3px;
+	text-shadow: 1px 1px 1px #9E3F3F;
+	cursor: pointer;
+}
+
+.addImageButton input {
+	background: #E27575;
+	border: none;
+	padding: -2px 25px 10px 25px;
+	color: #FFF;
+	box-shadow: 1px 1px 5px #B6B6B6;
+	border-radius: 3px;
+	text-shadow: 1px 1px 1px #9E3F3F;
+	cursor: pointer;	
+}
+
+.more-link a {
+	background: blue;
+	border: none;
+	padding: -2px 25px 10px 25px;
+	color: #FFF;
+	box-shadow: 1px 1px 5px #B6B6B6;
+	border-radius: 3px;
+	text-shadow: 1px 1px 1px #9E3F3F;
+	cursor: pointer;	
+	font-size: 12px;
+}
+
+.basic-grey .button input:hover {
+	background: #CF7A7A;
+}
 
 
 
+
+/* Link Styles */
+a.link:active, a.link:visited, a.link:link {
+    display:block;
+    width:300px;
+    height:30px;
+    color:white;
+    font-family:arial;
+    font-size:12px;
+    font-weight:normal;
+    text-decoration:none;
+    letter-spacing:0px;
+    line-height:28px;
+    background-color:#484848;
+    border-width:1px;
+    border-style:solid;
+    border-color:gray;
+    margin: 0 auto;
+}
+ 
+a.link:hover {
+    display:block;
+    width:300px;
+    height:30px;
+    color:white;
+    font-family:arial;
+    font-size:12px;
+    font-weight:normal;
+    text-decoration:none;
+    letter-spacing:0px;
+    line-height:28px;
+    background-color:#000033;
+    border-width:1px;
+    border-style:solid;
+    border-color:black;
+}  
+
+
+
+
+/* Nav Bar styles */
 .nav ul {
     *zoom:1;
     list-style:none;

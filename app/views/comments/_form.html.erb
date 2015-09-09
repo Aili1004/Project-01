@@ -1,37 +1,41 @@
-<%= form_for [@restaurant, @comment] do |f| %>
-	<p>
-		<%= f.label :content %>
-		<%= f.text_field :content %>
-	</p>
+
+<div class="basic-grey">
+	<%= form_for [@restaurant, @comment] do |f| %>
+		<p>
+			<%= f.label :content %>
+			<%= f.text_field :content %>
+		</p>
+			
+		<p>
+			<%= f.label :like, "Like", :value => "true" %>
+			<%= f.radio_button :like, true %>
+		</p>
+		<p>
+			<%= f.label :like, "Dislike", :value => "false" %>
+			<%= f.radio_button :like, false %>
+		</p>
+
+		<p>
+			<label>Restaurant:</label>
+			<%= @restaurant.name %>
+		</p>
+
+		<p>
+			<% if @current_user.present? %>
+				<label>User</label>
+				<%= @current_user.name %>
+			<% end %>
+		</p>
 		
-	<p>
-		<%= f.label :like, "Like", :value => "true" %>
-		<%= f.radio_button :like, true %>
-		<%= f.label :like, "Dislike", :value => "false" %>
-		<%= f.radio_button :like, false %>
-	</p>
-
-	<p>
-		<label>Restaurant:</label>
-		<%= @restaurant.name %>
-	</p>
-
-	<p>
 		<% if @current_user.present? %>
-			<label>User</label>
-			<%= @current_user.name %>
+			<div class="button">
+				<%= f.submit %>
+			</div>
+		<% else %>	
+			<%= link_to 'Create Comment', login_path,  :data => { :confirm => "Please login" } %>
 		<% end %>
-	</p>
-	
-	<% if @current_user.present? %>
-		<%= f.submit %>
-
-	<% else %>	
-		<%= link_to 'Create Comment', login_path,  :data => { :confirm => "Please login" } %>
 	<% end %>
-
-<% end %>
-
+</div>
 
 
 

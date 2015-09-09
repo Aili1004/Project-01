@@ -1,5 +1,7 @@
+<div class="basic-grey">
+	<h1>Edit Profile</h1>
+</div>
 
-<h2>Edit Profile</h2>
 <% if @user.errors.any? %>
 	<ol>
 		<% @user.errors.full_messages.each do |msg| %>
@@ -8,29 +10,30 @@
 	</ol>
 <% end %>
 
+<div class="basic-grey">
+	<%= form_for @user do |f| %>
+		<p>
+			<%= f.label :email %>
+			<%= f.email_field :email %>
+		</p>
+		
+		<p>
+			<%= f.label :name %>
+			<%= f.text_field :name %>
+		</p>
 
-<%= form_for @user do |f| %>
-	<p>
-		<%= f.label :email %>
-		<%= f.email_field :email %>
-	</p>
-	
-	<p>
-		<%= f.label :name %>
-		<%= f.text_field :name %>
-	</p>
+		<p>
+			<%= f.label :password %>
+			<%= f.password_field :password %>
+		</p>
 
-	<p>
-		<%= f.label :password %>
-		<%= f.password_field :password %>
-	</p>
-
-	<p>
-		<%= f.label :password_confirmation %>
-		<%= f.password_field :password_confirmation %>
-	</p>
-
-	<%= f.submit %>
-
-<% end %>
-
+		<p>
+			<%= f.label :password_confirmation %>
+			<%= f.password_field :password_confirmation %>
+		</p>
+		
+		<div class="button">
+			<%= f.submit %>
+		</div>
+	<% end %>
+</div>

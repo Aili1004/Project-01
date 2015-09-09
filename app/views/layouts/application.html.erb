@@ -9,19 +9,10 @@
   <link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Timmana' rel='stylesheet' type='text/css'>
 
-<!-- 	<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
-	<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/> -->
-
 </head>
 
 <body>
 	<div class="container">	
-		<!--<% if @current_user.present? %>
-			<p>User: <%= @current_user.name %></p>
-		<% end %>
-		<% if @current_restaurant_user.present? %>
-			<p>Restaurant Owner: <%= @current_restaurant_user.name %></p>
-		<% end %>-->
 
 		<nav class="nav">
 			<ul>
@@ -47,6 +38,12 @@
 							<li><%= link_to 'Restaurant User Login', restaurant_login_path %></li>
 							<li><%= link_to 'New Restaurant User', new_restaurant_user_path %></li>
 						<% end %>
+						
+						<% if @current_restaurant_user.present? %>
+							<li><%= link_to 'Add New Restaurant', new_restaurant_path %></li>
+						<% else %>	
+							<li><%= link_to 'Add New Restaurant', restaurant_login_path, :data => { :confirm => "Please login" } %></li>
+						<% end %>
 		    		</ul>
 		 		</li>
 				
@@ -56,10 +53,6 @@
 
 		<%= yield %>
 	</div>
-
-	<!--<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-	<script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-	<script type="text/javascript" src="slick/slick.min.js"></script>-->
 
 </body>
 </html>

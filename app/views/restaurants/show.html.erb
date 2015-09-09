@@ -1,9 +1,10 @@
+<div class="entire_show_page">
 
 <div class="restaurant_name">
 	<%= @restaurant.name %>
 </div>
 
-<div class="crossfade">
+<div class="slick">
 	<% @restaurant.images.each do |image| %>
 		<%= image_tag image.image, :class => 'show_image' %>
 	<% end %>
@@ -31,15 +32,15 @@
 
 
 <% if @current_user.present? %>
-	<p><%= link_to 'Add New Comment', new_restaurant_comment_path(@restaurant) %></p>
+	<p><%= link_to 'Add New Comment', new_restaurant_comment_path(@restaurant), :class => "link" %></p>
 <% else %>	
-	<p><%= link_to 'Add New Comment', login_path,  :data => { :confirm => "Please login" } %></p>
+	<p><%= link_to 'Add New Comment', login_path, :class => "link", :data => { :confirm => "Please login" } %></p>
 <% end %>
 
 <% if @current_restaurant_user.present? %>
 	<% if @current_restaurant_user.name == @restaurant.restaurant_user.name %>
-		<%= link_to 'Update', edit_restaurant_path(@restaurant) %> 
-		<%= link_to 'Delete', @restaurant, :method => 'delete', :data => { :confirm => "Are you sure?" } %>
+		<%= link_to "Update #{ @restaurant.name }", edit_restaurant_path(@restaurant), :class => "link" %> 
+		<%= link_to "Delete #{ @restaurant.name }", @restaurant, :method => 'delete', :class => "link", :data => { :confirm => "Are you sure?" } %>
 	<% end %>
 <% end %>
 	
@@ -48,4 +49,5 @@
 	<%= social_share_button_tag("My Site") %>
 </div>
 
+</div>
 

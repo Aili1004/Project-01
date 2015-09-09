@@ -5,6 +5,7 @@ class RestaurantsController < ApplicationController
 
 	def show
 		@restaurant = Restaurant.find params[:id]
+		
 	end
 
 	def new
@@ -36,7 +37,9 @@ class RestaurantsController < ApplicationController
 
 		params[:restaurant][:image].each do |img|
 			restaurant.images.create :image => img
+
 		end
+
 
 		redirect_to restaurant
 

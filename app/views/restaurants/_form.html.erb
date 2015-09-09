@@ -1,59 +1,109 @@
 
-<%= form_for @restaurant do |f| %>
-	<p>
-		<%= f.label :name %>
-		<%= f.text_field :name %>
-	</p>
-
-	<p>
-		<%= f.label :description %>
-		<%= f.text_area :description %>
-	</p>
-
-	<p>
-		<%= f.label :address %>
-		<%= f.text_field :address %>
-	</p>
-	
-	<p>
-		<%= f.label :opening_hours %>
-		<%= f.text_field :opening_hours %>
-	</p>
-
-
-	<% @restaurant.images.each do |img| %>
+<div class="basic-grey">
+	<%= form_for @restaurant do |f| %>
 		<p>
-			<%= label_tag :image %>
-			<%= url_field_tag :image, img.image, :name => "restaurant[image][]" %>
+			<%= f.label :name %>
+			<%= f.text_field :name, :placeholder => "Restaurant full name" %>
 		</p>
+
+		<p>
+			<%= f.label :description %>
+			<%= f.text_area :description, :placeholder => "Brief description of the restaurant" %>
+		</p>
+		
+		<p>
+			<%= f.label :address %>
+			<%= f.text_field :address, :placeholder => "Restaurant address" %>
+		</p>
+		
+		<p>
+			<%= f.label :opening_hours %>
+			<%= f.text_field :opening_hours, :placeholder => "Restaurant opening hours" %>
+		</p>
+
+		<% @restaurant.images.each do |img| %>
+			<p>
+				<%= label_tag :image %>
+				<%= url_field_tag :image, img.image, :name => "restaurant[image][]" %>
+			</p>
+		<% end %>
+
+
+		<div class="imgField">
+			<p>
+				<%= label_tag :image %>
+				<%= url_field_tag :image, nil, :name => "restaurant[image][]", :placeholder => "Image URL" %>
+			</p>
+		</div>
+
+		<div class="addImageButton">
+			<%= f.submit 'Add Image', :name => "add_image" %>
+		</div>
+
+		<p>
+			<%= f.label :popular_food %>
+			<%= f.text_field :popular_food, :placeholder => "The most popular food" %>
+		</p>
+		
+		<p>
+			<label>Restaurant Owner</label>
+			<%= f.select :restaurant_user_id, RestaurantUser.all.map { |user| [user.name, user.id] }, :include_blank => true, :placeholder => "Select the restaurant owner" %>
+		</p>
+
+		<div class="button">
+			<%= f.submit %>
+		</div>
+		
 	<% end %>
+</div>
 
-	<div class="imgField">
-		<p>
-			<%= label_tag :image %>
-			<%= url_field_tag :image, nil, :name => "restaurant[image][]" %>
-		</p>
-	</div>
 
-	<div class="addImageButton">
-		<%= f.submit 'Add Image', :name => "add_image" %>
-	</div>
+<!-- 
 
-	<p>
-		<%= f.label :popular_food %>
-		<%= f.text_field :popular_food %>
-	</p>
-	
-	<p>
-		<label>Restaurant Owner</label>
-		<%= f.select :restaurant_user_id, RestaurantUser.all.map { |user| [user.name, user.id] }, :include_blank => true %>
-	</p>
+<form action="" method="post" class="STYLE-NAME">
+    <label>
+        <span>Restaurant Name :</span>
+        <input id="name" type="text" name="name" placeholder="Full restaurant name" />
+    </label>
+    
+	 <label>
+        <span>Description :</span>
+        <textarea id="description" name="description" placeholder="Brief description of the restaurant"></textarea>
+    </label> 
 
-	<div class="form_button">
-		<%= f.submit %>
-	</div>
-	
-<% end %>
+    <label>
+        <span>Address :</span>
+        <input id="address" type="text" name="address" placeholder="Restaurant address" />
+    </label>
+    
+    <label>
+        <span>Opening Hours :</span>
+        <input id="opening_hours" type="text" name="opening_hours" placeholder="Restaurant opening hours" />
+    </label>
+   
+     <label>
+        <span>Restaurant Owner :</span><select name="selection">
+        <option value="Job Inquiry">Job Inquiry</option>
+        </select>
+    </label>    
+     <label>
+        <span>&nbsp;</span> 
+        <input type="button" class="button" value="Send" /> 
+    </label>    
+</form>
+
+ -->
+
+
+
+
+
+
+
+
+
+
+
 
 
 

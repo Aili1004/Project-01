@@ -1,5 +1,7 @@
 
-<h2>All Restaurants</h2>
+<!-- <div class="index-page"> -->
+	<h2>All Restaurants</h2>
+<!-- </div> -->
 
 <% @restaurants.each do |restaurant| %>
 	<p>
@@ -15,30 +17,26 @@
 			<p>
 				<div class="all_description">
 					<%= truncate(restaurant.description, :length => 120) %>
-					<%= link_to 'More...', restaurant %>
+
+					<div class="more-link">
+						<%= link_to 'More...', restaurant %>
+					</div>
 				</div>
 
 				<% restaurant.count = 0  %>
 				<% restaurant.totalcount = 0 %>
+
 				<% restaurant.comments.each do |c| %>
 					<% restaurant.totalcount = restaurant.totalcount.to_i + 1 %>
-
 					<% if c.like %>
 						<% restaurant.count = restaurant.count.to_i + 1 %>
 					<% end %>
+
 				<% end %>
 				<p><strong>Likes:</strong> <%= restaurant.count %> / <%= restaurant.totalcount %></p>
 			</p>
 		</div>
 	</p>
-<% end %>
-
-
-
-<% if @current_restaurant_user.present? %>
-	<p><%= link_to 'Add New Restaurant', new_restaurant_path %></p>
-<% else %>	
-	<p><%= link_to 'Add New Restaurant', restaurant_login_path,  :data => { :confirm => "Please login" } %></p>
 <% end %>
 
 
