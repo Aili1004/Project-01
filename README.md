@@ -51,6 +51,7 @@
 - When normal users logged in, they should be able to see all the comments they have posted.
 - Separate normal users and restaurant users, so that normal users are not able to see Restaurants option in menu bar; same as restaurant users.
 - Add mandatory fields for the forms.
+- Make AboutUs page more professional.
 
 
 -------------------------
