@@ -25,9 +25,14 @@
 }
 
 h2 {
-	font-family: 'Timmana', sans-serif;
-	font-size: 30px;
-	text-shadow: 0 0 3px #FF0000;
+	font-family: 'Sansita One', cursive;
+	font-size: 40px;
+}
+
+.home-header h2 {
+	font-family: 'Sansita One', cursive;
+	font-size: 40px;
+	text-align: right;
 }
 
 .index_image {
