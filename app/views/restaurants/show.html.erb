@@ -1,4 +1,3 @@
-<div class="entire_show_page">
 
 <div class="restaurant_name">
 	<%= @restaurant.name %>
@@ -13,10 +12,7 @@
 
 <div class="show_restaurant">
 	<p><strong>Brief Description:</strong><%= @restaurant.description %></p>
-	<p><strong>Address:</strong>
-
-	<div class="google-map-address"><%= link_to @restaurant.address, '/maps' %></p></div>
-
+	<p><strong>Address: </strong><%= link_to @restaurant.address, "https://www.google.com.au/maps", :target => "_blank" %></p>
 	<p><strong>Opening Hours:</strong> <%= @restaurant.opening_hours %></p>
 	<p><strong>Popular Food:</strong> <%= @restaurant.popular_food %></p>
 	<% if @restaurant.restaurant_user %>
@@ -49,7 +45,5 @@
 
 <div class="social">
 	<%= social_share_button_tag("My Site") %>
-</div>
-
 </div>
 

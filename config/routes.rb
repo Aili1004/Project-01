@@ -14,9 +14,6 @@ Rails.application.routes.draw do
 	resources :restaurant_users, :except => [:edit]
 	resources :restaurants, only: [:index, :show]
 
-	get '/maps' => 'places#maps'
-	resources :places
-
 	get '/login' => 'session#new' 
 	post '/login' => 'session#create' #log me in
 	delete '/login' => 'session#destroy' #logout
