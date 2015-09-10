@@ -1,6 +1,6 @@
 == README
 
-###Project One - RateIT###
+### Project One - RateIT ###
 
 - [view](https://github.com/Aili1004/Project-01) source in Github.
 - [view](http://az-ratings.herokuapp.com/) project in Heroku.
@@ -9,31 +9,31 @@
 -------------------------
 
 
-## **Models** ##
+## ** Models ** ##
 - comment, restaurant, user, restaurant_user, image
 
-## **Associations** ##
+## ** Associations ** ##
 - 1 User has many Comments; 1 Comment belongs to 1 User
 - 1 Restaurant has many Comments; 1 Comment belongs to 1 Restaurant
 - 1 Restaurant has many Images; 1 Image belongs to 1 Restaurant
 - 1 Restaurant_user has many Restaurants; 1 Restaurant belongs to 1 Restaurant_user
 
-## **Extra Gems Installed** ##
+## ** Extra Gems Installed ** ##
 - gem 'bcrypt', '~> 3.1.7'
 - gem 'social-share-button', '~> 0.1.6'
 - gem 'slick_rails'
 
-## **Javascript** ##
+## ** Javascript ** ##
 - Only used javascript for *slick* function which can be found in 'application.js'
 
-## **CSS** ##
+## ** CSS ** ##
 - All css is written in 'application.css'
 
 
 -------------------------
 
 
-## **RateIT main Functionalities** ##
+## ** RateIT main Functionalities ** ##
 - Normal users and restaurant users can view the home page and see all the comments without signing up or logging in.
 - Normal users can only add comments or rate a restaurant if they have an account and logged in.
 - Normal users' details are not supposed to be shown in the app after they leave comments and rate.
@@ -47,7 +47,7 @@
 -------------------------
 
 
-## **Functionalities I would like to add if had more time** ##
+## ** Functionalities I would like to add if had more time ** ##
 - Google Map; 
 - When normal users logged in, they should be able to see all the comments they have posted.
 - Separate normal users and restaurant users, so that normal users are not able to see Restaurants option in menu bar; same as restaurant users.
@@ -57,7 +57,7 @@
 -------------------------
 
 
-## **Difficulties I have faced during the project** ##
+## ** Difficulties I have faced during the project ** ##
 - User authentications
 - Adding and deleting columns from existing tables, modifying models
 - Designs
