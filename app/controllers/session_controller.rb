@@ -29,13 +29,11 @@ class SessionController < ApplicationController
 
 	def destroy
     	session[:user_id] = nil
-      # session[:restaurant_user_id] = nil
     	redirect_to root_path
   end
 
 
   def restaurant_destroy
-      # session[:user_id] = nil
       session[:restaurant_user_id] = nil
       redirect_to root_path
   end

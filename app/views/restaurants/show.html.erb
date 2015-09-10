@@ -13,19 +13,16 @@
 
 <div class="show_restaurant">
 	<p><strong>Brief Description:</strong><%= @restaurant.description %></p>
-	<p><strong>Address:</strong> <%= @restaurant.address %></p>
+	<p><strong>Address:</strong>
+
+	<div class="google-map-address"><%= link_to @restaurant.address, '/maps' %></p></div>
+
 	<p><strong>Opening Hours:</strong> <%= @restaurant.opening_hours %></p>
 	<p><strong>Popular Food:</strong> <%= @restaurant.popular_food %></p>
 	<% if @restaurant.restaurant_user %>
 		<p><strong>Restaurant Owner:</strong> <%= @restaurant.restaurant_user.name %></p>
 	<% end %>
 </div>
-
-<!-- <div style='width: 800px;'>
-  <div id="map" style='width: 800px; height: 400px;'></div>
-</div> -->
-
-
 
 <div class="comment">
 	<p><strong>Comments:</strong>

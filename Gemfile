@@ -32,7 +32,6 @@ gem 'social-share-button', '~> 0.1.6'
 gem 'slick_rails'
 
 gem 'geocoder'
-gem 'gmaps4rails'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

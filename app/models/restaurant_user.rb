@@ -16,9 +16,6 @@ class RestaurantUser < ActiveRecord::Base
 	has_secure_password
 	has_many :restaurants
 
-	# accepts_nested_attributes_for :restaurants, :allow_destroy => true
-	# validates_presence_of :image
-
 	validates :email, :presence => true, :uniqueness => true 
 	validates :name, :presence => true, :uniqueness => true, :length => { :minimum => 3 }
 	validates :license_number, :presence => true, :uniqueness => true 
