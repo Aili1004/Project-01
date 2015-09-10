@@ -40,14 +40,14 @@
 - Restaurant users can only add new restaurants, update and delete if they have an account with RateIT.
 - Restaurant users can only update or delete a restaurant if they are currently logged in and is the original restaurant owner. They are not supposed to update or delete the restaurant that belongs to other restaurant owners.
 - All users have the abilities to share every page of the app.
-- When adding a new restaurant, users are only able to add one image initially. However, they can add more images later when they update the restaurant. The images they added will be shown as gallary in the 'show' page.
+- When adding a new restaurant, users are only able to add one image initially. However, they can add more images later when they update the restaurant. The images they added will be shown as gallaries of the restaurant.
 	
 
 -------------------------
 
 
 ## **Functionalities I would like to add if had more time**
-- Google Map; 
+- Google Map.
 - When normal users logged in, they should be able to see all the comments they have posted.
 - Separate normal users and restaurant users, so that normal users are not able to see Restaurants option in menu bar; same as restaurant users.
 - Add mandatory fields for the forms.
